@@ -1,6 +1,6 @@
 use trapir_api::img::resize;
 
-mod args;
+mod cli;
 
 fn main() {
     // This is a simple Rust program that does nothing.
