@@ -1,8 +1,32 @@
 [package]
 name = "trapir-api"
+authors = ["Heru Handika <herubiolog@gmail.com>"]
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "Command-line utility and API for scientific image analysis in camera trap and biodiversity research."
+readme = "README.md"
+homepage = "https://www.trapir.app/"
+repository = "https://github.com/hhandika/trapir-api"
+keywords = [
+    "cli",
+    "utility",
+    "image-analysis",
+    "camera-trap",
+    "biodiversity",
+    "science",
+]
+categories = ["command-line-utilities", "science", "visualization"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = { version = "4.5.40", features = ["derive"] }
+globset = "0.4.16"
+image = "0.25.6"
+
+# We simplify the binary name to `trapir`
+# to avoid unnecessary complexity in the CLI.
+[[bin]]
+name = "trapir"
+path = "src/main.rs"
